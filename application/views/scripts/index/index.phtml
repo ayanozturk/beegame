@@ -1,1 +1,46 @@
-<?php echo $this->test; ?>
+<?php /* @var $bee AbstractBeeEntity */ ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bee Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<style>
+    .bee {
+        float: left;
+        width: 50px;
+        height: 50px;
+        border: 1px solid #000;
+        margin: 5px;
+        text-align: center;
+    }
+</style>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <?php if (count($this->bees)): ?>
+                <?php foreach ($this->bees as $bee): ?>
+                    <div class="bee">
+                        <?php echo $bee->getName(); ?>
+                        <?php echo $bee->getHitPoints(); ?>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                Game over!
+            <?php endif; ?>
+        </div>
+
+        <div class="col-lg-12">
+            <?php if (count($this->bees)): ?>
+                <a href="/index/hit" class="btn btn-primary">Hit a random bee</a>
+            <?php endif; ?>
+            <a href="/index/reset" class="btn btn-danger">Reset Game</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
