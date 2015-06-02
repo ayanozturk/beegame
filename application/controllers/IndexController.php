@@ -17,6 +17,7 @@ class IndexController extends Zend_Controller_Action
             $this->addBees();
         }
 
+        $this->view->allBees = $session->allBees;
         $this->view->bees = $session->bees;
     }
 
@@ -41,6 +42,7 @@ class IndexController extends Zend_Controller_Action
         }
 
         $session->bees = $bees;
+        $session->allBees = $bees;
         $session->queenCount= 3;
         return $this;
     }
@@ -57,6 +59,7 @@ class IndexController extends Zend_Controller_Action
             $bee->setHitPoints($bee->getHitPoints() - $bee->getDeductOnHit());
 
             if ($bee->getHitPoints() <= 0) {
+                $bee->setHitPoints(0);
                 unset($session->bees[$randomBeeIndex]);
                 $session->bees = array_values($session->bees);
 
