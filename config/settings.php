@@ -8,7 +8,7 @@ return [
         ],
 
         'game' => [
-            'queenCount' => 3,
+            'queenCount' => 1,
             'workerCount' => 5,
             'droneCount' => 7,
         ]
