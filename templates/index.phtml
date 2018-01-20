@@ -1,0 +1,46 @@
+<?php /* @var $game \BeeGame\Service\GameSession */ ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bee Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<style>
+    .bee {
+        float: left;
+        width: 55px;
+        height: 70px;
+        border: 1px solid #000;
+        margin: 5px;
+        text-align: center;
+    }
+</style>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <?php foreach ($game->bees as $bee): ?>
+                <div class="bee">
+                    <strong><?php echo $bee->getName(); ?></strong> <br />
+                    <?php echo $bee->getHitPoints(); ?> <br />
+                    <?php echo $bee->getStatus(); ?>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <div class="col-lg-12">
+            <?php if ($game->isInProgress()): ?>
+                <a href="/hit" class="btn btn-primary">Hit a random bee</a>
+
+            <?php else: ?>
+                Game over!
+            <?php endif; ?>
+            <a href="/reset" class="btn btn-danger">Reset Game</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
