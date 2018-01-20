@@ -10,9 +10,7 @@ final class Reset extends Action
 {
     public function __invoke(Request $request, Response $response, array $args = [])
     {
-        if (isset($_SESSION['game']) && $_SESSION['game'] instanceof GameSession) {
-            unset($_SESSION['game']);
-        }
+        unset($_SESSION['game']);
 
         return $response->withRedirect('/');
     }
