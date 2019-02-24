@@ -1,0 +1,6 @@
+suites:
+  beegame_suite:
+    namespace: BeeGame
+    psr4_prefix: BeeGame
+    src_path: "%paths.config%/src"
+    spec_path: "%paths.config%/tests"

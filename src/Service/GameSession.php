@@ -7,7 +7,7 @@ use BeeGame\Entity\DroneBee;
 use BeeGame\Entity\QueenBee;
 use BeeGame\Entity\WorkerBee;
 
-final class GameSession
+class GameSession
 {
     /* @var Bee[] */
     public $bees = [];
