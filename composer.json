@@ -11,7 +11,7 @@
   },
 
   "require-dev": {
-    "phpspec/phpspec": "^5.1",
+    "phpspec/phpspec": "^7.0",
     "phpunit/phpunit": "^6.5"
   },
 
